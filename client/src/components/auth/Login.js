@@ -52,6 +52,7 @@ class Login extends Component {
                                     error={errors.email}
                                     id="email"
                                     type="email"
+                                    autoComplete="username"
                                 />
                                 <label htmlFor="email">Email</label>
                             </div>
@@ -62,6 +63,7 @@ class Login extends Component {
                                     error={errors.password}
                                     id="password"
                                     type="password"
+                                    autoComplete="current-password"
                                 />
                                 <label htmlFor="password">Password</label>
                             </div>
