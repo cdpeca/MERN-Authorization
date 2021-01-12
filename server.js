@@ -23,10 +23,12 @@ const db = require("./config/keys").mongoURI;
 mongoose
     .connect(
         db,
-        { useNewUrlParser: true }
+        // { useNewUrlParser: true } this is deprecated and will be removed, use useUnifiedTopology: true instead
+        { useUnifiedTopology: true }
     )
     .then(() => console.log("MongoDB successfully connected"))
     .catch(err => console.log(err));
+
 
 // Passport middleware
 app.use(passport.initialize());
