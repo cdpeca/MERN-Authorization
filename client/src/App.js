@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Route exact path="/" component={Landing} />
-        <Route exact path="/" component={Register} />
-        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
       </div>
     </Router>
   );
