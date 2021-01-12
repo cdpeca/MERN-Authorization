@@ -23,7 +23,6 @@ const db = require("./config/keys").mongoURI;
 mongoose
     .connect(
         db,
-        // { useNewUrlParser: true } this is deprecated and will be removed, use useUnifiedTopology: true instead
         { useUnifiedTopology: true }
     )
     .then(() => console.log("MongoDB successfully connected"))
