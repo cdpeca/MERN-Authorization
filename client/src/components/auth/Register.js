@@ -66,6 +66,7 @@ class Register extends Component {
                                     error={errors.email}
                                     id="email"
                                     type="email"
+                                    autoComplete="username"
                                 />
                                 <label htmlFor="email">Email</label>
                             </div>
@@ -76,6 +77,7 @@ class Register extends Component {
                                     error={errors.password}
                                     id="password"
                                     type="password"
+                                    autoComplete="new-password"
                                 />
                                 <label htmlFor="password">Password</label>
                             </div>
@@ -86,6 +88,7 @@ class Register extends Component {
                                     error={errors.password2}
                                     id="password2"
                                     type="password"
+                                    autoComplete="new-password"
                                 />
                                 <label htmlFor="password2">Confirm Password</label>
                             </div>
