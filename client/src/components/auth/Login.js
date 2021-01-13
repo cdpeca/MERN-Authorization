@@ -16,6 +16,15 @@ class Login extends Component {
         };
     }
 
+    componentDidMount() {
+        // If logged in and user navigates to Login page, should redirect them back to dashboard
+        // !: This looks like bad UX, should go back to requesting page instead
+        // TODO: Modify this so that user gets redirected back to where they came from... this will annoy users
+        if (this.props.auth.isAuthenticated) {
+            this.props.history.push("/dashboard");
+        }
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
             this.props.history.push("/dashboard"); // push user to dashboard when they login
