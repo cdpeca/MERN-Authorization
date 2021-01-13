@@ -17,6 +17,15 @@ class Register extends Component {
         };
     }
 
+    componentDidMount() {
+        // If logged in and user navigates to Register page, should redirect to dashboard
+        // !: This looks like bad UX, should go back to requesting page instead
+        // TODO: Modify this so that user gets redirected back to where they came from... this will annoy users
+        if (this.props.auth.isAuthenticated) {
+            this.props.history.push("/dashboard");
+        }
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({
