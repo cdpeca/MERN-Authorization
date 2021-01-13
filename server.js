@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+dotenv.config({ path: ".env.local" });
+dotenv.config({ path: ".env" });
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -16,8 +20,18 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// DB Config
-const db = require("./config/keys").mongoURI;
+/*
+    DB Config
+
+    Protect this area between local, dev and production
+*/
+
+// Use this if you store in the ./config/keys.js file
+// const db = require("./config/keys").mongoURI;
+
+// Use this for execution on local environment
+const db = process.env.REACT_APP_mongoURI;
+
 
 // Connect to MongoDB
 mongoose
