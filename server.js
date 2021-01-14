@@ -20,18 +20,11 @@ app.use(
 );
 app.use(bodyParser.json());
 
-/*
-    DB Config
-
-    Protect this area between local, dev and production
-*/
-
-// Use this if you store in the ./config/keys.js file
+// Use this if only running local, or else change use environment variables
 // const db = require("./config/keys").mongoURI;
 
-// Use this for execution on local environment
-const db = process.env.REACT_APP_mongoURI;
-
+// Use this for utilizing env values
+const db = process.env.mongoURI;
 
 // Connect to MongoDB
 mongoose
